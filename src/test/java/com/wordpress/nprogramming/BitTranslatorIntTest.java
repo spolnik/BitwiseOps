@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @RunWith(Parameterized.class)
-public class BitProcessorTest {
+public class BitTranslatorIntTest {
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
@@ -32,15 +32,15 @@ public class BitProcessorTest {
     private int input;
     private String expected;
 
-    public BitProcessorTest(int input, String expected) {
+    public BitTranslatorIntTest(int input, String expected) {
         this.input = input;
         this.expected = expected;
     }
 
     @Test
-    public void testBitRepresentationInt() throws Exception {
+    public void testBitRepresentation() throws Exception {
         Injector injector = Guice.createInjector(new BitProcessorModule());
-        BitProcessor bitProcessor = injector.getInstance(BitProcessor.class);
+        BitTranslator bitProcessor = injector.getInstance(BitTranslator.class);
 
         String bitRepresentation = bitProcessor.getBitRepresentation(input);
 

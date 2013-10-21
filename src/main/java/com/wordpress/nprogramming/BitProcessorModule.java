@@ -5,6 +5,6 @@ import com.google.inject.AbstractModule;
 public class BitProcessorModule extends AbstractModule {
     @Override
     protected void configure() {
-        bind(BitProcessor.class).to(BitProcessorImpl.class);
+        bind(BitTranslator.class).to(BitTranslatorImpl.class);
     }
 }
