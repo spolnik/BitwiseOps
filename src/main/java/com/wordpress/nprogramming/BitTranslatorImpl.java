@@ -74,21 +74,21 @@ final class BitTranslatorImpl implements BitTranslator {
         x = -1 * x - 1;
 
         while (x > 0) {
-            if (x % 2 == 1)
+            if ((x & 1) == 1)
                 stack.push(zero);
             else
                 stack.push(one);
-            x = x / 2;
+            x = x >> 1;
         }
     }
 
     private void processPositiveNumber(long x, Stack<Number> stack) {
         while (x > 0) {
-            if (x % 2 == 0)
+            if ((x & 1) == 0)
                 stack.push(zero);
             else
                 stack.push(one);
-            x = x / 2;
+            x = x >> 1;
         }
     }
 
