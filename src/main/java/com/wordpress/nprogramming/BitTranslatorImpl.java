@@ -4,7 +4,7 @@ import java.util.Stack;
 
 import static com.google.common.base.Preconditions.*;
 
-public final class BitTranslatorImpl implements BitTranslator {
+final class BitTranslatorImpl implements BitTranslator {
     private final static Byte one = 1;
     private final static Byte zero = 0;
 
